@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { gql, graphql } from 'react-apollo';
+import { graphql } from 'react-apollo';
+import gql from 'graphql-tag';
+//
 import Notelist from './NoteList';
 import ContactHeader from './ContactHeader';
 import AddNote from './AddNote';
