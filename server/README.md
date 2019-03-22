@@ -91,3 +91,13 @@ export default graphql(contactsListQuery)(Contacts);
     }
   }
 ```
+- add contact
+```
+  mutation{
+    addContact(firstName:"ben",lastName:"huang"){
+      id
+      firstName
+      lastName
+    }
+  }
+```
