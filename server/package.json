@@ -14,7 +14,10 @@
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
     "express": "^4.16.4",
-    "graphql": "^14.1.1"
+    "graphql": "^14.1.1",
+    "graphql-subscriptions": "^1.0.0",
+    "graphql-tools": "^4.0.4",
+    "graphql-type-json": "^0.2.2"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

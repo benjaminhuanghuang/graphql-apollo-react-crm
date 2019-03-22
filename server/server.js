@@ -3,31 +3,19 @@ import cors from 'cors';
 const PORT = 4000;
 const app = express();
 
-const { ApolloServer, gql } = require('apollo-server-express');
-// The GraphQL schema
-const typeDefs = gql`
-  type Query {
-    "A simple type for getting started!"
-    hello: String
-  }
-`;
-
-// A map of functions which return data for the schema.
-const resolvers = {
-  Query: {
-    hello: () => 'world'
-  }
-};
-
 app.use('*', cors({ origin: 'http://localhost:3000' }));
 
+// Apply Apollo server
+import { ApolloServer } from 'apollo-server-express';
+import { typeDefs } from './graphql/types';
+import { resolvers } from './graphql/resolvers';
+//MakeExecutableSchema has been replaced with the ApolloServer constructor function
 const server = new ApolloServer({
-  // These will be defined for both new or existing servers
   typeDefs,
   resolvers,
 });
+server.applyMiddleware({ app }); // apply Apollo server to express server
 
-server.applyMiddleware({ app }); // app is from an existing express app
 app.listen(PORT, () =>
   console.log(`Your GraphQL server is running on port ${PORT}`)
 );

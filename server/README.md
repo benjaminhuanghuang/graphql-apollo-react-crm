@@ -71,3 +71,23 @@ export const contactsListQuery = gql`
 
 export default graphql(contactsListQuery)(Contacts);
 ```
+
+## Query
+```
+  {
+    __schema{
+      types{
+        name
+      }
+    }
+  }
+```
+```
+  {
+    contacts
+    {
+      firstName,
+      lastName
+    }
+  }
+```

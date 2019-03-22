@@ -1,5 +1,5 @@
 import { makeExecutableSchema, addMockFunctionsToSchema } from 'graphql-tools';
-import { resolvers } from './resolvers';
+import { resolvers } from '../graphql/resolvers';
 
 const typeDefs = `
   type Contact {
