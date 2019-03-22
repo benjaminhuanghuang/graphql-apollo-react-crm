@@ -4,14 +4,17 @@
   "description": "- [Learning Apollo](https://www.linkedin.com/learning/learning-apollo/)",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon ./server.js --exec babel-node -e js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "apollo-server-express": "^2.4.8",
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "graphql": "^14.1.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
