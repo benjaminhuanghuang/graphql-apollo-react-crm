@@ -1,103 +1,28 @@
-## Reference 
-- [Learning Apollo](https://www.linkedin.com/learning/learning-apollo/)
-- https://medium.com/@jeffrey.allen.lewis/graphql-migrating-from-apollo-server-express-1-0-to-2-0-be80f5c61bee
-
-## Apollo
-
-
-
-## Client 
-- setup
+## Setup Node server
 ```
-  create-react-app .
-
-  npm i -S react-router react-router-dom
+  npm i -S express
+  npm i -D nodemon
+  
 ```
-- setup apollo
+## Setup ES6
+Add .babelrc
 
-  https://www.apollographql.com/docs/react/essentials/get-started.html
-```
-  npm i -S apollo-boost react-apollo graphql graphql-tag
-```
-  - apollo-boost: Package containing everything you need to set up Apollo Client
-  - react-apollo: View layer integration for React
-  - graphql: Also parses your GraphQL queries
-
-## Server
-- setup
-```
-  npm init
-
-  npm i -S express body-parser cors
-  npm i -S apollo-server-express graphql graphql-suscription graphql-tools
-  npm i -D babel-cli babel-preset-es2015 babel-preset-stage-0 nodemon
-```
-## Dev tools
-- Apollo Client Developer Tools
-- React Developer Tools
-
-
-
-## Bind Apollo with component
-```
-import { gql, graphql } from 'react-apollo';
-
-const Contacts = ({ data: { loading, error, contacts }}) => {
-  if (loading) {
-    return <p>Loading...</p>
-  }
-  if (error) {
-    return <p>{error.message}</p>
-  }
-
-  return (
-    <ul>
-      { contacts.map( item => 
-      (<li key={item.id}>{item.firstName} {item.lastName}</li>)
-      )}
-    </ul>
-  );
-}
-
-export const contactsListQuery = gql`
-  query ContactsQuery {
-    contacts {
-      id
-      firstName
-      lastName
-    }
-  }
-`;
-
-export default graphql(contactsListQuery)(Contacts);
+Install
+``` 
+  npm i -S babel-cli babel-preset-env
 ```
 
-## Query
+Create start script
 ```
-  {
-    __schema{
-      types{
-        name
-      }
-    }
-  }
+ "start": "nodemon ./server.js --exec babel-node -e js",
 ```
+- The express server should work.
+
+## Setup Apollo
+Install
 ```
-  {
-    contacts
-    {
-      firstName,
-      lastName
-    }
-  }
+npm i -S apollo-server-express graphql
 ```
-- add contact
-```
-  mutation{
-    addContact(firstName:"ben",lastName:"huang"){
-      id
-      firstName
-      lastName
-    }
-  }
-```
+Create Apollo server
+
+## Setup monogoos
